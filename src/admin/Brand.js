@@ -40,9 +40,8 @@ function Brand(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!='error'){
+      if(formData[key] === "" && key!=='error')
         return key;
-      }
     });
 
     if(errorkeys.length>0){
@@ -165,7 +164,7 @@ function Brand(){
          userdata.map((row) => (   
        <tr key={row._id}>
        <td>{row.brand_name}</td>
-       <td><img src={row.brand_image} style={{ width:'100px',height:'100px'}}/></td>
+       <td><img alt={'img'} src={row.brand_image} style={{ width:'100px',height:'100px'}}/></td>
        <td>
           <button className="btn btn-primary btn-sm" style={{margin:"2px"}}  onClick={(e)=>handleProceed(row._id,1)}><i className="fas fa-edit"></i></button>&nbsp;<br/>
           <button className="btn btn-primary btn-sm" style={{margin:"2px"}} onClick={()=>onDeleteData(row._id)}><i className="fas fa-trash"></i></button>
