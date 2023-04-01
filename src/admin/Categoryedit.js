@@ -37,7 +37,7 @@ function Categoryedit(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!='error'){
+      if(formData[key] === "" && key!=='error'){
         return key;
       }
     });

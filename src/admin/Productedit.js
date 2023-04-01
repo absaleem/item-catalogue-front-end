@@ -46,7 +46,7 @@ function Productedit(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!='error'){
+      if(formData[key] === "" && key!=='error'){
         return key;
       }
     });
@@ -118,15 +118,6 @@ function Productedit(){
         getData(params.id);//call user data when loading the file           
         getBrand();//call user data when loading the file
         },[]);
-        
-      const listDatas= async function getData(){
-          try {  
-          const response=await axios.get("http://localhost:3001/Catalog/listProduct");
-          setUserdata(response.data); 
-         
-          }catch(error){
-          }
-      }
         
     return (
         <>

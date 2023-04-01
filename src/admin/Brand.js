@@ -94,7 +94,7 @@ function Brand(){
       }
      
       const handleProceed = (id,status) => {
-        if(status==1){  navigate(`/admin/Brandedit/${id}`); }else{  }
+        if(status === 1){  navigate(`/admin/Brandedit/${id}`); }else{  }
       };
     
       async function onDeleteData(id){

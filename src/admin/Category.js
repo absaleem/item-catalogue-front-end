@@ -39,7 +39,7 @@ function Category(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!='error'){
+      if(formData[key] === "" && key!=='error'){
         return key;
       }
     });
@@ -93,7 +93,7 @@ function Category(){
       }
      
       const handleProceed = (id,status) => {
-        if(status==1){  navigate(`/admin/Categoryedit/${id}`); }else{  }
+        if(status===1){  navigate(`/admin/Categoryedit/${id}`); }else{  }
       };
     
       async function onDeleteData(id){

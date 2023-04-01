@@ -25,7 +25,6 @@ function Dashboard(){
     }
   }
 
-  const [formData,setFormdata]=useState(formValues); 
   const [userdata,setUserdata]=useState([]);
  
 
@@ -52,7 +51,7 @@ function Dashboard(){
       }
      
       const handleProceed = (id,status) => {
-        if(status==1){  navigate(`/admin/Brandedit/${id}`); }else{  }
+        if(status===1){  navigate(`/admin/Brandedit/${id}`); }else{  }
       };
     
       async function onDeleteData(id){
@@ -73,7 +72,7 @@ function Dashboard(){
     <div className="container-fluid">
         <h2 className="section-title position-relative text-uppercase mx-xl-5 mb-4"><span className="bg-secondary pr-3">List Brand</span></h2>
         <div className="row px-xl-5">
-       
+        <div><ToastContainer /></div>
          
   <table className="table table-bordered bg-light" id="dataTable" style={{width:"100%",cellSpacing:"0"}}>  
    <thead>
@@ -88,7 +87,7 @@ function Dashboard(){
          userdata.map((row) => (   
        <tr key={row._id}>
        <td>{row.brand_name}</td>
-       <td><img src={row.brand_image} style={{ width:'100px',height:'100px'}}/></td>
+       <td><img alt="{'img'}" src={row.brand_image} style={{ width:'100px',height:'100px'}}/></td>
        <td>
           <button className="btn btn-primary btn-sm" style={{margin:"2px"}}  onClick={(e)=>handleProceed(row._id,1)}><i className="fas fa-edit"></i></button>&nbsp;<br/>
           <button className="btn btn-primary btn-sm" style={{margin:"2px"}} onClick={()=>onDeleteData(row._id)}><i className="fas fa-trash"></i></button>

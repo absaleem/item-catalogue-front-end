@@ -45,7 +45,7 @@ function Product(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!='error'){
+      if(formData[key] === "" && key!=='error'){
         return key;
       }
     });
@@ -117,7 +117,7 @@ function Product(){
       }
      
       const handleProceed = (id,status) => {
-        if(status==1){  navigate(`/admin/Productedit/${id}`); }else{  }
+        if(status===1){  navigate(`/admin/Productedit/${id}`); }else{  }
       };
     
       async function onDeleteData(id){
