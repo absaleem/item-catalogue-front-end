@@ -23,7 +23,7 @@ function Clients(){
         { brandList.length > 0 && brandList.map((brand_item) => (
                        
             <div className="col-lg-3 col-md-4 col-sm-6 pb-1" key={brand_item._id}>
-                <a className="text-decoration-none" href={"#"}>
+                <a className="text-decoration-none" href={"/"}>
                     <div className="cat-item d-flex align-items-center mb-4">
                         <div className="overflow-hidden" style={{width:"100px",height:"100px"}}>
                         <Link to={ `/Products/${brand_item._id}` }><img className="img-fluid" src={brand_item.brand_image} alt=""/></Link>
