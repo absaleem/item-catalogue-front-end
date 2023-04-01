@@ -119,6 +119,15 @@ function Productedit(){
         getBrand();//call user data when loading the file
         },[]);
         
+      const listDatas= async function getData(){
+          try {  
+          const response=await axios.get("http://localhost:3001/Catalog/listProduct");
+          setUserdata(response.data); 
+         
+          }catch(error){
+          }
+      }
+        
     return (
         <>
         <Navbaradmin/>
