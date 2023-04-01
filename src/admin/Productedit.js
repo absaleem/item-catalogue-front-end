@@ -29,7 +29,6 @@ function Productedit(){
   const [formData,setFormdata]=useState(formValues); 
   const [userdata,setUserdata]=useState([]);
   const [brandList,setBranddata]=useState([]);
-  const [loading, setLoading] = useState(true);
   const [html_editor, setHtml] = useState('');
   const [html_editor1, setHtml1] = useState('');
 
@@ -55,7 +54,6 @@ function Productedit(){
     if(errorkeys.length>0){
       toast('pls fill all the fields');
     }else{
-      setLoading(true);
       try {
 
         const response=await axios.put(`http://localhost:3001/Catalog/updateProduct/${formData.id}`,{
@@ -78,7 +76,6 @@ function Productedit(){
     }catch(error){
   
     }
-    setLoading(false);
     } 
   }
   function onChangeeditor(e) {
@@ -90,23 +87,19 @@ function Productedit(){
    useEffect(() => {
 
         async function getData(){
-          setLoading(true);
             try {  
             const response=await axios.get("http://localhost:3001/Catalog/listProduct");
             setUserdata(response.data);  
             }catch(error){
             }
-         setLoading(false);
         }
 
         async function getBrand(){
-          setLoading(true);
             try {  
             const response=await axios.get("http://localhost:3001/Catalog/listBrand");
             setBranddata(response.data);  
             }catch(error){
             }
-         setLoading(false);
         }
 
         async function getData(rowId){
@@ -127,19 +120,13 @@ function Productedit(){
         },[]);
         
       const listDatas= async function getData(){
-        setLoading(true);
           try {  
           const response=await axios.get("http://localhost:3001/Catalog/listProduct");
           setUserdata(response.data); 
          
           }catch(error){
           }
-          setLoading(false);
       }
-     
-      const handleProceed = (id,status) => {
-        if(status==1){  navigate(`/admin/Productedit/${id}`); }else{  }
-      };
         
     return (
         <>

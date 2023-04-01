@@ -45,7 +45,7 @@ function Productprice(){
   }
    const handleChangeradio=(e,cat_id,cat_name,sub_cat_id,sub_cat_name)=>{
    const { value, checked } = e.target;
-   console.log(value);
+   //console.log(value);
    let array = [...radioList];
    //console.log('cat_id==',cat_id);
    let isAvailable = array.find(el=>el.cat_id === cat_id);
@@ -141,16 +141,7 @@ function Productprice(){
             setSubcategoryOptions(arr);    
             setLoading(false);
          }
-            async function getProductlist(){
-            setLoading(true);
-              try {  
-              const response=await axios.get("http://localhost:3001/Catalog/listProduct");
-              setProductdata(response.data);  
-              }catch(error){
-              }
-           setLoading(false);
-          }
-
+      
            
         getProductlist(); getSubcategory(); getData();//call user data when loading the file
         },[]);

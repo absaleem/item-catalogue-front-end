@@ -32,8 +32,7 @@ function Categoryedit(){
     setFormdata({...formData, [e.target.name]:e.target.value, error});
   }
   const [formData,setFormdata]=useState(formValues); 
-  const [loading, setLoading] = useState(true);
-
+  
   const handleSubmit= async (e)=>{
     e.preventDefault();
   
@@ -46,7 +45,6 @@ function Categoryedit(){
     if(errorkeys.length>0){
       alert('pls fill all the fields');
     }else{
-      setLoading(true);
       try {
         const response=await axios.put(`http://localhost:3001/Catalog/updateCategory/${formData.id}`,{
         category_details:{
@@ -63,12 +61,10 @@ function Categoryedit(){
     }catch(error){
   
     }
-    setLoading(false);
     } 
   }
 
   useEffect(() => {
-    setLoading(true);
     try{
   async function getData(rowId){
       const response = await axios.get(`http://localhost:3001/Catalog/getCategory/${rowId}`);
@@ -84,7 +80,6 @@ function Categoryedit(){
   
     }
     
-  setLoading(false);
   },[]);
        
         

@@ -31,7 +31,6 @@ function Productpriceedit(){
   const [formData,setFormdata]=useState(formValues); 
   const [productList,setProductdata]=useState([]);
   const [radioList,setRadiodata]=useState([]);
-  const [loading, setLoading] = useState(true);
   const [subcategoryList, setSubcategoryOptions] = useState([]);
   
   const handleChange =(e)=>{
@@ -45,7 +44,7 @@ function Productpriceedit(){
   }
   const handleChangeradio=(e,cat_id,cat_name,sub_cat_id,sub_cat_name)=>{
     const { value, checked } = e.target;
-    console.log(value);
+    //console.log(value);
     let array = [...radioList];
     //console.log('cat_id==',cat_id);
     let isAvailable = array.find(el=>el.cat_id === cat_id);
@@ -75,7 +74,6 @@ function Productpriceedit(){
     if(errorkeys.length>0){
       toast('pls fill all the fields');
     }else{
-      setLoading(true);
       try {
 
         const response=await axios.put(`http://localhost:3001/Catalog/updateProductprice/${formData.id}`,{
@@ -96,7 +94,6 @@ function Productpriceedit(){
     }catch(error){
   
     }
-    setLoading(false);
     } 
   }
    useEffect(() => {
@@ -117,17 +114,15 @@ function Productpriceedit(){
         }     
 
       async function getProductlist(){
-            setLoading(true);
               try {  
               const response=await axios.get("http://localhost:3001/Catalog/listProduct");
               setProductdata(response.data);  
               }catch(error){
               }
-           setLoading(false);
           }
 
           async function getSubcategory(){
-            setLoading(true); var arr=Array(); var cat_id=''; var arr1=Array();
+             var arr=Array(); var cat_id=''; var arr1=Array();
               try {  
               const response_list=await axios.get("http://localhost:3001/Catalog/getSubcategorybycategory");
               var count_cat=0;
@@ -148,20 +143,9 @@ function Productpriceedit(){
               }catch(error){
               }
               setSubcategoryOptions(arr);    
-              setLoading(false);
            }
         
-          async function getProductlist(){
-            setLoading(true);
-              try {  
-              const response=await axios.get("http://localhost:3001/Catalog/listProduct");
-              setProductdata(response.data);  
-              }catch(error){
-              }
-           setLoading(false);
-          }
-
-           
+          
         getData(params.id); getProductlist();  getSubcategory() //call user data when loading the file
         },[]);
         

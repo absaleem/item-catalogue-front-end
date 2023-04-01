@@ -34,8 +34,7 @@ function Brandedit(){
     setFormdata({...formData, [e.target.name]:e.target.value, error});
   }
   const [formData,setFormdata]=useState(formValues); 
-  const [loading, setLoading] = useState(true);
-
+  
   const handleSubmit= async (e)=>{
     e.preventDefault();
   
@@ -48,7 +47,6 @@ function Brandedit(){
     if(errorkeys.length>0){
       alert('pls fill all the fields');
     }else{
-      setLoading(true);
       try {
         const response=await axios.put(`http://localhost:3001/Catalog/updateBrand/${formData.id}`,{
         brand_details:{
@@ -66,12 +64,10 @@ function Brandedit(){
     }catch(error){
   
     }
-    setLoading(false);
     } 
   }
 
   useEffect(() => {
-    setLoading(true);
     try{
   async function getData(rowId){
       const response = await axios.get(`http://localhost:3001/Catalog/getBrand/${rowId}`);
@@ -88,7 +84,6 @@ function Brandedit(){
   
     }
     
-  setLoading(false);
   },[]);
        
         
