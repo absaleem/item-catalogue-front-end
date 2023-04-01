@@ -76,11 +76,6 @@ const handleOnSearch = (string, results) => {
         <div className="row bg-secondary py-1 px-xl-5">
             <div className="col-lg-6 d-none d-lg-block">
                 <div className="d-inline-flex align-items-center h-100">
-              {/*   <a href={url} className="text-body mr-3">About</a>
-                    <a href={url} className="text-body mr-3" >Contact</a>
-                    <a href={url} className="text-body mr-3" >Help</a>
-                    <a href={url} className="text-body mr-3" >FAQs</a>
-             */}
                 </div>
             </div>
             <div className="col-lg-6 text-center text-lg-right">
@@ -92,13 +87,13 @@ const handleOnSearch = (string, results) => {
                     user_token? <Link to={ `/Myaccount/${user_id}` }  className="text-body mr-3">My account</Link> : ""
                }
                {
-                    user_token? "" :  <Link to="/Register"><a className="text-body mr-3">Register</a></Link> 
+                    user_token? "" :  <Link to="/Register"  className="text-body mr-3">Register</Link> 
                }
                {
-                    user_token? "" :  <Link to="/Login"><a className="text-body mr-3">Login</a></Link> 
+                    user_token? "" :  <Link to="/Login" className="text-body mr-3">Login</Link> 
                }
                {
-                    user_token? <Link onClick={handleLogout}><a className="text-body mr-3">Logout</a></Link> : ""
+                    user_token? <Link onClick={handleLogout} className="text-body mr-3">Logout</Link> : ""
                }   
                    {/* <div className="btn-group">
                         <button type="button" className="btn btn-sm btn-light dropdown-toggle" data-toggle="dropdown">My Account</button>
