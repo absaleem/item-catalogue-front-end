@@ -21,6 +21,15 @@ function BackendLogin(){
         navigate('/admin/Dashboard');
     }
  
+   const handleChange =(e)=>{
+     let error= { ...formValues.error };
+     if(e.target.value === ""){
+       error[e.target.name]=`${e.target.placeholder} is required`;
+     }else{
+       error[e.target.name]=""; 
+     }
+     setFormdata({...formData, [e.target.name]:e.target.value, error});
+   }
    const [formData,setFormdata]=useState(formValues); 
    
    const handleSubmit= async (e)=>{
