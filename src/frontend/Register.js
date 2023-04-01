@@ -1,9 +1,8 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import Footer from "./Components/Footer"
 import Navbar from "./Components/Navbar";
 import Topbar from "./Components/Topbar";
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -32,8 +31,7 @@ function Register(){
             confirm_password:""
         }
       }
-    const navigate = useNavigate();
-   
+    
    const handleChange =(e)=>{
      let error= { ...formValues.error };
      if(e.target.value === ""){
@@ -49,7 +47,7 @@ function Register(){
      e.preventDefault();
    
      const errorkeys=Object.keys(formData).filter((key)=>{
-       if(formData[key] === "" && key!='error'){
+       if(formData[key] === "" && key!=='error'){
          return key;
        }
      });

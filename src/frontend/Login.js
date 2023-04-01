@@ -1,4 +1,4 @@
-import React,{useState,useEffect} from "react";
+import React,{useState} from "react";
 import Footer from "./Components/Footer"
 import Navbar from "./Components/Navbar";
 import Topbar from "./Components/Topbar";
@@ -33,7 +33,7 @@ function Login(){
      e.preventDefault();
    
      const errorkeys=Object.keys(formData).filter((key)=>{
-       if(formData[key] === "" && key!='error'){
+       if(formData[key] === "" && key!=='error'){
          return key;
        }
      });

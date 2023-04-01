@@ -5,25 +5,22 @@ import Navbar from "./Components/Navbar";
 import Topbar from './Components/Topbar';
 
 import axios from "axios";
-import { Link,useNavigate,useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 function Products(){
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
   const params = useParams();
   
   const [productList,setProductdata]=useState([]);
   const [subcategoryList, setSubcategoryOptions] = useState([]);
   const [radioList,setRadiodata]=useState([]);
   const [avg_review, setAveragereview]=useState();
-  const [product_review_count, setProductreviewcount]=useState();
+  //const [product_review_count, setProductreviewcount]=useState();
   
 
-  const handlesSubmit =(id)=>{
-        navigate(`/Productdetail/${id}`);
-    }
     const handleChangeradio=(e,cat_id,sub_cat_id)=>{
         const { value, checked } = e.target;
         let array = [...radioList];
@@ -78,7 +75,7 @@ function Products(){
             const response1 = response.data;
             setProductdata(response1[0]);  
             setAveragereview(response1[1][0].ratingAvg); 
-            setProductreviewcount(response1[1][0]); 
+            //setProductreviewcount(response1[1][0]); 
             }catch(error){
             }
         }   
@@ -90,7 +87,7 @@ function Products(){
             var count_cat=0;
             for(var i=0;i<response_list.data.length;i++){
                 
-                if(response_list.data[i].category_id!=cat_id){
+                if(response_list.data[i].category_id!==cat_id){
                   var arr1=Array();
                   arr1.push({'sub_category_id':response_list.data[i]._id,'sub_category_name':response_list.data[i].sub_category_name,'category_id':response_list.data[i].category_id });
                   count_cat=count_cat+1;

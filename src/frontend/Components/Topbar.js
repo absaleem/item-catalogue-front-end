@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
-import { Link,useNavigate,useParams } from 'react-router-dom';
+import { Link,useNavigate } from 'react-router-dom';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
 function Topbar(){
@@ -38,7 +38,7 @@ function Topbar(){
 const handleOnSearch = (string, results) => {
     // onSearch will have as the first callback parameter
     // the string searched and for the second the results.
-    var str=string; console.log(str);
+    var str=string; //console.log(str);
     //console.log(string, results);
 
     //setSearchElement(string);

@@ -14,20 +14,9 @@ function Dashboard(){
     if(!admin_token){
         navigate('/admin');
     }
- 
-
-   let formValues={
-    brand_name: "",
-    brand_image: "",
-    error:{
-      brand_name: "",
-      brand_image: "",
-    }
-  }
 
   const [userdata,setUserdata]=useState([]);
  
-
    useEffect(() => {
 
         async function getData(){
@@ -41,7 +30,7 @@ function Dashboard(){
         getData();//call user data when loading the file
         },[]);
         
-      const listDatas= async function getData(){
+      const listDatas= async function getData1(){
           try {  
           const response=await axios.get("http://localhost:3001/Catalog/listBrand");
           setUserdata(response.data); 

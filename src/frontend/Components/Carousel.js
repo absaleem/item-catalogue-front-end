@@ -39,16 +39,16 @@ function Carousel(){
                     
                     <div className="carousel-inner">
                         <div className="carousel-item position-relative active" style={{height:"430px"}}>
-                            <img className="position-absolute w-100 h-100" src={home_slider1} style={{objectFit:"cover"}}/>
+                            <img alt={"img"} className="position-absolute w-100 h-100" src={home_slider1} style={{objectFit:"cover"}}/>
                         </div>
                         <div className="carousel-item position-relative" style={{height:"430px"}}>
-                            <img className="position-absolute w-100 h-100" src={home_slider2} style={{objectFit:"cover"}}/>
+                            <img alt={"img"} className="position-absolute w-100 h-100" src={home_slider2} style={{objectFit:"cover"}}/>
                         </div>
                         <div className="carousel-item position-relative" style={{height:"430px"}}>
-                            <img className="position-absolute w-100 h-100" src={home_slider3} style={{objectFit:"cover"}}/>
+                            <img alt={"img"} className="position-absolute w-100 h-100" src={home_slider3} style={{objectFit:"cover"}}/>
                         </div>
                         <div className="carousel-item position-relative" style={{height:"430px"}}>
-                            <img className="position-absolute w-100 h-100" src={home_slider4} style={{objectFit:"cover"}}/>
+                            <img alt={"img"} className="position-absolute w-100 h-100" src={home_slider4} style={{objectFit:"cover"}}/>
                         </div>
                     </div>
                    
@@ -79,25 +79,25 @@ function Carousel(){
         <div className="row px-xl-5 pb-3">
             <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div className="d-flex align-items-center bg-light mb-4" style={{ padding:"30px"}}>
-                    <h1 className="fa fa-check text-primary m-0 mr-3"></h1>
+                    <h1 className="fa fa-check text-primary m-0 mr-3">-</h1>
                     <h5 className="font-weight-semi-bold m-0">Quality Product</h5>
                 </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div className="d-flex align-items-center bg-light mb-4" style={{ padding:"30px"}}>
-                    <h1 className="fa fa-shipping-fast text-primary m-0 mr-2"></h1>
+                    <h1 className="fa fa-shipping-fast text-primary m-0 mr-2">-</h1>
                     <h5 className="font-weight-semi-bold m-0">Free catalogue</h5>
                 </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div className="d-flex align-items-center bg-light mb-4" style={{ padding:"30px"}}>
-                    <h1 className="fas fa-exchange-alt text-primary m-0 mr-3"></h1>
+                    <h1 className="fas fa-exchange-alt text-primary m-0 mr-3">-</h1>
                     <h5 className="font-weight-semi-bold m-0">Quick Access</h5>
                 </div>
             </div>
             <div className="col-lg-3 col-md-6 col-sm-12 pb-1">
                 <div className="d-flex align-items-center bg-light mb-4" style={{ padding:"30px"}}>
-                    <h1 className="fa fa-phone-volume text-primary m-0 mr-3"></h1>
+                    <h1 className="fa fa-phone-volume text-primary m-0 mr-3">-</h1>
                     <h5 className="font-weight-semi-bold m-0">24/7 Support</h5>
                 </div>
             </div>

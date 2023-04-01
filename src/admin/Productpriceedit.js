@@ -67,7 +67,7 @@ function Productpriceedit(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!='error'){
+      if(formData[key] === "" && key!=='error'){
         return key;
       }
     });
@@ -137,7 +137,7 @@ function Productpriceedit(){
                   }
                   arr[count_cat]=[{'category_id':response_list.data[i].category_id,'category_name':response_list.data[i].category.category_name,sub_category_details:arr1}]
                   
-                  var cat_id=response_list.data[i].category_id;
+                   cat_id=response_list.data[i].category_id;
                 }
               
               }catch(error){

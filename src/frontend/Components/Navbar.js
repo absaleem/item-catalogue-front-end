@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from "react";
-import { Link,useNavigate,useParams } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 function Navbar(){
@@ -7,8 +7,7 @@ function Navbar(){
 
     const [brandList, setBrandOptions] = useState([]);
     const navigate = useNavigate();
-    const params = useParams();
-   
+    
     useEffect(() => {
 
         async function getBrands(){
@@ -22,12 +21,7 @@ function Navbar(){
         }        
         getBrands();
         },[]);
-        
-       const handlesSubmitmenu =(id)=>{
-        navigate(`/Products/${id}`);
-       }
-   
-        
+            
     return( 
     <>
     <div className="container-fluid bg-dark mb-30">

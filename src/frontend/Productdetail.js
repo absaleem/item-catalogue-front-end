@@ -5,7 +5,7 @@ import Navbar from "./Components/Navbar";
 import Topbar from './Components/Topbar';
 
 import axios from "axios";
-import { useNavigate,useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { DefaultEditor } from 'react-simple-wysiwyg';
@@ -14,9 +14,8 @@ import Moment from 'react-moment';
 
 function Productdetail(){
 
-    const params = useParams();  const navigate = useNavigate();
+    const params = useParams(); 
 
-    const user_token = localStorage.getItem("user_token");
     const user_id = localStorage.getItem("user_id");
     const user_name = localStorage.getItem("user_name");
     
@@ -51,7 +50,7 @@ function Productdetail(){
   }
   const handlereviewSubmit= async (e)=>{
     e.preventDefault();
-    if(user_rating!=""){
+    if(user_rating!==""){
         try {
             const response=await axios.post("http://localhost:3001/Catalog/createProductreview", {"review_details":{
                     product_id:productList.id,

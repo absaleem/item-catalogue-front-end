@@ -68,7 +68,7 @@ function Productprice(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!='error'){
+      if(formData[key] === "" && key!=='error'){
         return key;
       }
     });
@@ -133,7 +133,7 @@ function Productprice(){
                 }
                 arr[count_cat]=[{'category_id':response_list.data[i].category_id,'category_name':response_list.data[i].category.category_name,sub_category_details:arr1}]
                 
-                var cat_id=response_list.data[i].category_id;
+                cat_id=response_list.data[i].category_id;
               }
             
             }catch(error){
@@ -142,7 +142,6 @@ function Productprice(){
             setLoading(false);
          }
       
-           
         getProductlist(); getSubcategory(); getData();//call user data when loading the file
         },[]);
         
@@ -158,7 +157,7 @@ function Productprice(){
       }
      
       const handleProceed = (id,status) => {
-        if(status==1){  navigate(`/admin/Productpriceedit/${id}`); }else{  }
+        if(status===1){  navigate(`/admin/Productpriceedit/${id}`); }else{  }
       };
     
       async function onDeleteData(id){
@@ -172,7 +171,6 @@ function Productprice(){
         }
         setLoading(false);
       }  
-     
         
     return (
         <>

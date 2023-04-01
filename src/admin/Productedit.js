@@ -127,7 +127,8 @@ function Productedit(){
           }catch(error){
           }
       }
-        
+     
+   
     return (
         <>
         <Navbaradmin/>

@@ -15,11 +15,6 @@ function Myaccount(){
   if(!user_token){
     navigate('/');
   }
- 
-  const handleLogout = () => {
-      localStorage.removeItem("user_token"); 
-       navigate('/')
-   }
 
     let formValues={
         user_name:"",
@@ -60,7 +55,7 @@ function Myaccount(){
      e.preventDefault();
    
      const errorkeys=Object.keys(formData).filter((key)=>{
-       if(formData[key] === "" && key!='error'){
+       if(formData[key] === "" && key!=='error'){
          return key;
        }
      });
