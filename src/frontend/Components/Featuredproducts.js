@@ -56,11 +56,11 @@ useEffect(() => {
                     <div className="product-img position-relative overflow-hidden">
                     <img className="img-fluid w-100" src={product.product_image} />
                         <div className="product-action">
-                            <a style={{cursor:"pointer"}} className="btn btn-outline-dark btn-square" onClick={()=>handlesSubmit(product.product_id)} ><i className="fa fa-search"></i></a>
+                            <a href="#" style={{cursor:"pointer"}} className="btn btn-outline-dark btn-square" onClick={()=>handlesSubmit(product.product_id)} ><i className="fa fa-search"></i></a>
                         </div>
                     </div>
                     <div className="text-center py-4">
-                        <a style={{cursor:"pointer"}} className="h6 text-decoration-none text-truncate" onClick={()=>handlesSubmit(product.product_id)} >{product.product_name}</a>
+                        <a href="#" style={{cursor:"pointer"}} className="h6 text-decoration-none text-truncate" onClick={()=>handlesSubmit(product.product_id)} >{product.product_name}</a>
                         <div className="d-flex align-items-center justify-content-center mt-2">
                         </div>
                     </div>

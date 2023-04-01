@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from "react";
 import axios from "axios";
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Navbaradmin from "../frontend/Components/Navbaradmin";
@@ -21,15 +21,6 @@ function BackendLogin(){
         navigate('/admin/Dashboard');
     }
  
-   const handleChange =(e)=>{
-     let error= { ...formValues.error };
-     if(e.target.value === ""){
-       error[e.target.name]=`${e.target.placeholder} is required`;
-     }else{
-       error[e.target.name]=""; 
-     }
-     setFormdata({...formData, [e.target.name]:e.target.value, error});
-   }
    const [formData,setFormdata]=useState(formValues); 
    
    const handleSubmit= async (e)=>{
