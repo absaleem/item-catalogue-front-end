@@ -38,7 +38,7 @@ function Topbar(){
 const handleOnSearch = (string, results) => {
     // onSearch will have as the first callback parameter
     // the string searched and for the second the results.
-    var str=string; //console.log(str);
+    //var str=string; //console.log(str);
     //console.log(string, results);
 
     //setSearchElement(string);

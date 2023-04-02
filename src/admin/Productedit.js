@@ -27,7 +27,6 @@ function Productedit(){
   }
 
   const [formData,setFormdata]=useState(formValues); 
-  const [userdata,setUserdata]=useState([]);
   const [brandList,setBranddata]=useState([]);
   const [html_editor, setHtml] = useState('');
   const [html_editor1, setHtml1] = useState('');
@@ -71,8 +70,7 @@ function Productedit(){
         navigate('/admin/Product');
         }, 2000);   
       
-      listDatas();
-    
+      
     }catch(error){
   
     }
@@ -86,14 +84,7 @@ function Productedit(){
   }
    useEffect(() => {
 
-        async function getData(){
-            try {  
-            const response=await axios.get("http://localhost:3001/Catalog/listProduct");
-            setUserdata(response.data);  
-            }catch(error){
-            }
-        }
-
+    
         async function getBrand(){
             try {  
             const response=await axios.get("http://localhost:3001/Catalog/listBrand");
@@ -118,16 +109,6 @@ function Productedit(){
         getData(params.id);//call user data when loading the file           
         getBrand();//call user data when loading the file
         },[]);
-        
-      const listDatas= async function getData(){
-          try {  
-          const response=await axios.get("http://localhost:3001/Catalog/listProduct");
-          setUserdata(response.data); 
-         
-          }catch(error){
-          }
-      }
-     
    
     return (
         <>

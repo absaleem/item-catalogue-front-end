@@ -81,7 +81,7 @@ function Products(){
         }   
         
         async function getSubcategory(){
-          var arr=Array(); var cat_id=''; //var arr1=Array();
+          var arr=Array(); var cat_id=''; var arr1=[];
             try {  
             const response_list=await axios.get("http://localhost:3001/Catalog/getSubcategorybycategory");
             var count_cat=0;
@@ -96,7 +96,7 @@ function Products(){
                 }
                 arr[count_cat]=[{'category_id':response_list.data[i].category_id,'category_name':response_list.data[i].category.category_name,sub_category_details:arr1}]
                 
-                var cat_id=response_list.data[i].category_id;
+                cat_id=response_list.data[i].category_id;
               }
             
             }catch(error){

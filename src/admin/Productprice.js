@@ -68,9 +68,9 @@ function Productprice(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!=='error'){
+      if(formData[key] === "" && key!=='error')
         return key;
-      }
+      
     });
     if(errorkeys.length>0){
       toast('pls fill all the fields');
@@ -118,14 +118,14 @@ function Productprice(){
           }
 
       async function getSubcategory(){
-          setLoading(true); var arr=Array(); var cat_id=''; //var arr1=Array();
+          setLoading(true); var arr=Array(); var cat_id=''; var arr1=Array();
             try {  
             const response_list=await axios.get("http://localhost:3001/Catalog/getSubcategorybycategory");
             var count_cat=0;
             for(var i=0;i<response_list.data.length;i++){
                 
-                if(response_list.data[i].category_id!=cat_id){
-                  var arr1=Array();
+                if(response_list.data[i].category_id!==cat_id){
+                  arr1=Array();
                   arr1.push({'sub_category_id':response_list.data[i]._id,'sub_category_name':response_list.data[i].sub_category_name,'category_id':response_list.data[i].category_id });
                   count_cat=count_cat+1;
                 }else{

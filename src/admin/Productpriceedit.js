@@ -46,7 +46,6 @@ function Productpriceedit(){
     const { value, checked } = e.target;
     //console.log(value);
     let array = [...radioList];
-    //console.log('cat_id==',cat_id);
     let isAvailable = array.find(el=>el.cat_id === cat_id);
      
     if(isAvailable){
@@ -67,9 +66,9 @@ function Productpriceedit(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!=='error'){
+      if(formData[key] === "" && key!=='error')
         return key;
-      }
+      
     });
     if(errorkeys.length>0){
       toast('pls fill all the fields');
@@ -128,8 +127,8 @@ function Productpriceedit(){
               var count_cat=0;
               for(var i=0;i<response_list.data.length;i++){
                   
-                  if(response_list.data[i].category_id!=cat_id){
-                    var arr1=Array();
+                  if(response_list.data[i].category_id!==cat_id){
+                    arr1=Array();
                     arr1.push({'sub_category_id':response_list.data[i]._id,'sub_category_name':response_list.data[i].sub_category_name,'category_id':response_list.data[i].category_id });
                     count_cat=count_cat+1;
                   }else{

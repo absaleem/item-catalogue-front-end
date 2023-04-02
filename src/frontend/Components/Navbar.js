@@ -1,12 +1,10 @@
 import React,{useState,useEffect} from "react";
-import { useNavigate } from 'react-router-dom';
 import axios from "axios";
 
 function Navbar(){
     let url="";
 
     const [brandList, setBrandOptions] = useState([]);
-    const navigate = useNavigate();
     
     useEffect(() => {
 

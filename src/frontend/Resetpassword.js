@@ -3,7 +3,7 @@ import Footer from "./Components/Footer"
 import Navbar from "./Components/Navbar";
 import Topbar from "./Components/Topbar";
 import axios from "axios";
-import { Link, useNavigate,useParams } from 'react-router-dom';
+import { useNavigate,useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
@@ -19,7 +19,6 @@ function Forgotpassword(){
        async function getData(token){
           try{
            var res= await axios.get(`http://localhost:3001/Catalog/user/checKTokenexists/${token}`); 
-           console.log(res);
           }
           catch(error){
            toast('Password link expired'); 
@@ -29,7 +28,7 @@ function Forgotpassword(){
           } 
        }    
        
-           var res=  getData(token);//call user data when loading the file   
+        getData(token);//call user data when loading the file   
       
     },[]);
     
