@@ -9,7 +9,7 @@ function Navbar(){
     useEffect(() => {
 
         async function getBrands(){
-            const listBranddata= await axios.get("http://localhost:3001/Catalog/listBrand");
+            const listBranddata= await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listBrand");
             let brand_data= listBranddata.data.sort(function(a, b){
               if(a.brand_name < b.brand_name) { return -1; }
               if(a.brand_name > b.brand_name) { return 1; }

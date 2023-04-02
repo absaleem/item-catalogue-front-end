@@ -56,7 +56,7 @@ function Productedit(){
     }else{
       try {
 
-        const response=await axios.put(`http://localhost:3001/Catalog/updateProduct/${formData.id}`,{
+        const response=await axios.put(`https://item-catalog-webservice.onrender.com/Catalog/updateProduct/${formData.id}`,{
           product_details:{
             brand_id:formData.brand_id,
             product_name: formData.product_name,
@@ -88,14 +88,14 @@ function Productedit(){
     
         async function getBrand(){
             try {  
-            const response=await axios.get("http://localhost:3001/Catalog/listBrand");
+            const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listBrand");
             setBranddata(response.data);  
             }catch(error){
             }
         }
 
         async function getData(rowId){
-          const response = await axios.get(`http://localhost:3001/Catalog/getProduct/${rowId}`);
+          const response = await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/getProduct/${rowId}`);
           const response1 = response.data.product_details;
           setHtml(response1.product_specification);
           setHtml1(response1.product_description);

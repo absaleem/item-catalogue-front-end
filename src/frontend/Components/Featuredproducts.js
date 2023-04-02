@@ -16,7 +16,7 @@ useEffect(() => {
 
     async function getData(){
         let data = [];
-       const response = await axios.get(`http://localhost:3001/Catalog/listFeaturedsettings/`);  
+       const response = await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/listFeaturedsettings/`);  
        
        response.data.length > 0 &&  response.data.map((item) => {
           if(data.indexOf(item.product_id) < 0) {

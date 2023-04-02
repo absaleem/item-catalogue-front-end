@@ -51,7 +51,7 @@ function Subcategoryedit(){
       alert('pls fill all the fields');
     }else{
       try {
-        const response=await axios.put(`http://localhost:3001/Catalog/updateCategory/${formData.id}`,{
+        const response=await axios.put(`https://item-catalog-webservice.onrender.com/Catalog/updateCategory/${formData.id}`,{
         category_details:{
             category_name:formData.category_name,
             category_image:formData.category_image,
@@ -74,7 +74,7 @@ function Subcategoryedit(){
   useEffect(() => {
     try{
   async function getData(rowId){
-      const response = await axios.get(`http://localhost:3001/Catalog/getCategory/${rowId}`);
+      const response = await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/getCategory/${rowId}`);
       const response1 = response.data.category_details;
       setFormdata({...formData,
               id:response1._id,

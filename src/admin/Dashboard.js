@@ -21,7 +21,7 @@ function Dashboard(){
 
         async function getData(){
             try {  
-            const response=await axios.get("http://localhost:3001/Catalog/listBrand");
+            const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listBrand");
             setUserdata(response.data);  
             }catch(error){
             }
@@ -32,7 +32,7 @@ function Dashboard(){
         
       const listDatas= async function getData1(){
           try {  
-          const response=await axios.get("http://localhost:3001/Catalog/listBrand");
+          const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listBrand");
           setUserdata(response.data); 
          
           }catch(error){
@@ -45,7 +45,7 @@ function Dashboard(){
     
       async function onDeleteData(id){
         try {
-        const response = await axios.delete(`http://localhost:3001/Catalog/deleteBrand/${id}`);
+        const response = await axios.delete(`https://item-catalog-webservice.onrender.com/Catalog/deleteBrand/${id}`);
         toast(response.data.msg);    
         listDatas();
         }catch(error){

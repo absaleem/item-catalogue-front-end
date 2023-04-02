@@ -77,7 +77,7 @@ function Productpriceedit(){
     }else{
       try {
 
-        const response=await axios.put(`http://localhost:3001/Catalog/updateProductprice/${formData.id}`,{
+        const response=await axios.put(`https://item-catalog-webservice.onrender.com/Catalog/updateProductprice/${formData.id}`,{
           product_details:{
             product_id: formData.product_id,
             product_image: formData.product_image,
@@ -100,7 +100,7 @@ function Productpriceedit(){
    useEffect(() => {
 
     async function getData(rowId){
-        const response = await axios.get(`http://localhost:3001/Catalog/getProductprice/${rowId}`);
+        const response = await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/getProductprice/${rowId}`);
         const response1 = response.data.product_details;
         setFormdata({...formData,
                 id:response1._id,
@@ -116,7 +116,7 @@ function Productpriceedit(){
 
       async function getProductlist(){
               try {  
-              const response=await axios.get("http://localhost:3001/Catalog/listProduct");
+              const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listProduct");
               setProductdata(response.data);  
               }catch(error){
               }
@@ -125,7 +125,7 @@ function Productpriceedit(){
           async function getSubcategory(){
              var arr=[]; var cat_id=''; var arr1=[];
               try {  
-              const response_list=await axios.get("http://localhost:3001/Catalog/getSubcategorybycategory");
+              const response_list=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/getSubcategorybycategory");
               var count_cat=0;
               for(var i=0;i<response_list.data.length;i++){
                   

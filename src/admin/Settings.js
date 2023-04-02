@@ -53,7 +53,7 @@ function Settings(){
   const [userinfo, setUserInfo] = useState([]);
 
   async function getSettings(rowId){
-    const response = await axios.get(`http://localhost:3001/Catalog/getSettings/${rowId}`);  
+    const response = await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/getSettings/${rowId}`);  
     const response1 = response.data.settings_details;
     setUserInfo(response1.home_featured_products);
     setFormdata({...formData,
@@ -96,7 +96,7 @@ function Settings(){
       toast('pls fill all the fields');
     }else{
         try {
-       const response=await axios.put(`http://localhost:3001/Catalog/updateSettings/6396f5b18d3ca2485a0f0411`,{"settings_details":{
+       const response=await axios.put(`https://item-catalog-webservice.onrender.com/Catalog/updateSettings/6396f5b18d3ca2485a0f0411`,{"settings_details":{
         home_slider1: formData.home_slider1,
         home_slider2: formData.home_slider2,
         home_slider3: formData.home_slider3,
@@ -118,7 +118,7 @@ function Settings(){
    useEffect(() => {
 
    async function getData(rowId){
-      const response = await axios.get(`http://localhost:3001/Catalog/getSettings/${rowId}`);  
+      const response = await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/getSettings/${rowId}`);  
       const response1 = response.data.settings_details;
       setUserInfo(response1.home_featured_products);
       
@@ -131,7 +131,7 @@ function Settings(){
       }    
       async function getProductlist(){
           try {  
-          const response=await axios.get("http://localhost:3001/Catalog/listProduct");
+          const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listProduct");
           setProductdata(response.data);  
           }catch(error){
           }

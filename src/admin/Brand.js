@@ -51,7 +51,7 @@ function Brand(){
     }else{
       setLoading(true);
       try {
-       const response=await axios.post("http://localhost:3001/Catalog/createBrand",{"brand_details":{
+       const response=await axios.post("https://item-catalog-webservice.onrender.com/Catalog/createBrand",{"brand_details":{
         brand_name:formData.brand_name,
         brand_image:formData.brand_image,
       }
@@ -74,7 +74,7 @@ function Brand(){
         async function getData(){
           setLoading(true);
             try {  
-            const response=await axios.get("http://localhost:3001/Catalog/listBrand");
+            const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listBrand");
             setUserdata(response.data);  
             }catch(error){
             }
@@ -87,7 +87,7 @@ function Brand(){
       const listDatas= async function getData(){
         setLoading(true);
           try {  
-          const response=await axios.get("http://localhost:3001/Catalog/listBrand");
+          const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listBrand");
           setUserdata(response.data); 
          
           }catch(error){
@@ -102,7 +102,7 @@ function Brand(){
       async function onDeleteData(id){
         setLoading(true);
         try {
-        const response = await axios.delete(`http://localhost:3001/Catalog/deleteBrand/${id}`);
+        const response = await axios.delete(`https://item-catalog-webservice.onrender.com/Catalog/deleteBrand/${id}`);
         toast(response.data.msg);    
         listDatas();
         }catch(error){

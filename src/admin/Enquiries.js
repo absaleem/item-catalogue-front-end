@@ -19,7 +19,7 @@ function Enquiries(){
 
         async function getData(){
             try {  
-            const response=await axios.get("http://localhost:3001/Catalog/admin/enquiry/listEnquiries");
+            const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/admin/enquiry/listEnquiries");
             console.log(response);
             setUserdata(response.data);  
             }catch(error){

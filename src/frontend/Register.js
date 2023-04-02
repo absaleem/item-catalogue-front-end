@@ -58,7 +58,7 @@ function Register(){
         alert('Password and Confirm Password doesnt match');
     }else{
        try {
-       const response=await axios.post("http://localhost:3001/Catalog/user/signup", {
+       const response=await axios.post("https://item-catalog-webservice.onrender.com/Catalog/user/signup", {
         user_name:formData.user_name,
         mobile_number:formData.mobile_number,
         address:formData.address,

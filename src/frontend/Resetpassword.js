@@ -18,7 +18,7 @@ function Forgotpassword(){
        const token=params.token;  setFormdata({...formData, password_token:token}); //console.log(token); console.log(formData);
        async function getData(token){
           try{
-           var res= await axios.get(`http://localhost:3001/Catalog/user/checKTokenexists/${token}`); 
+           var res= await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/user/checKTokenexists/${token}`); 
           }
           catch(error){
            toast('Password link expired'); 
@@ -40,7 +40,7 @@ function Forgotpassword(){
      e.preventDefault();
    
        try {
-         const response = await axios.post("http://localhost:3001/Catalog/user/resetPassword",{...formData});
+         const response = await axios.post("https://item-catalog-webservice.onrender.com/Catalog/user/resetPassword",{...formData});
          if(response){
                toast(response.data.msg); 
                setTimeout(() => {

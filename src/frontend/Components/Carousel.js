@@ -13,7 +13,7 @@ function Carousel(){
     useEffect(() => {
 
         async function getData(rowId){
-           const response = await axios.get(`http://localhost:3001/Catalog/getSettings/${rowId}`);  
+           const response = await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/getSettings/${rowId}`);  
            const response1 = response.data.settings_details;
            setCarousel1(response1.home_slider1);
            setCarousel2(response1.home_slider2);

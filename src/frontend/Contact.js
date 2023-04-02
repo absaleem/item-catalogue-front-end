@@ -47,7 +47,7 @@ function Contact(){
       toast('pls fill all the fields');
     }else{
       try {
-       const response=await axios.post("http://localhost:3001/Catalog/admin/enquiry/createEnquiry",{"enquiry_details":{
+       const response=await axios.post("https://item-catalog-webservice.onrender.com/Catalog/admin/enquiry/createEnquiry",{"enquiry_details":{
         user_name: formData.user_name,
         email_id: FormData.email_id,
         subject: formData.subject,

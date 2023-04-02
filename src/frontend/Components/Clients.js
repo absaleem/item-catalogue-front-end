@@ -8,7 +8,7 @@ function Clients(){
     useEffect(() => {
 
         async function getBrand(){
-            const listBranddata= await axios.get("http://localhost:3001/Catalog/listBrand");
+            const listBranddata= await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listBrand");
             setBrandOptions(listBranddata.data);
         }        
         getBrand();

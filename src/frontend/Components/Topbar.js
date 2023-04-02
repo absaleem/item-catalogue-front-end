@@ -4,7 +4,7 @@ import { Link,useNavigate } from 'react-router-dom';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
 function Topbar(){
-   let url="http://localhost:3000/";
+   let url="https://item-catalog-webservice.onrender.com/";
    
    const navigate = useNavigate();
    const user_token = localStorage.getItem("user_token");
@@ -18,7 +18,7 @@ function Topbar(){
       try {
         let data = [];
         const response_products = await axios.get(
-          "http://localhost:3001/Catalog/listProduct"
+          "https://item-catalog-webservice.onrender.com/Catalog/listProduct"
         );
 
         response_products.data.length > 0 &&

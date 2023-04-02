@@ -47,7 +47,7 @@ function Products(){
           toast('Pls select Atleast a filter');
         }else{
           try {    
-            const response=await axios.post("http://localhost:3001/Catalog/searchbySubcategory",{"search_details":{
+            const response=await axios.post("https://item-catalog-webservice.onrender.com/Catalog/searchbySubcategory",{"search_details":{
               sub_cat_id: radioList.toString(),
             }});
          setProductdata(response.data);  
@@ -64,14 +64,14 @@ function Products(){
        useEffect(() => {
         async function getProductlist(){
             try {  
-            const response=await axios.get("http://localhost:3001/Catalog/listProduct");
+            const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listProduct");
             setProductdata(response.data);  
             }catch(error){
             }
         }
         async function getData(brand_id){
             try {  
-            const response=await axios.get(`http://localhost:3001/Catalog/getBrandproducts/${brand_id}`);
+            const response=await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/getBrandproducts/${brand_id}`);
             const response1 = response.data;
             setProductdata(response1[0]);  
             setAveragereview(response1[1][0].ratingAvg); 
@@ -83,7 +83,7 @@ function Products(){
         async function getSubcategory(){
           var arr=Array(); var cat_id=''; var arr1=[];
             try {  
-            const response_list=await axios.get("http://localhost:3001/Catalog/getSubcategorybycategory");
+            const response_list=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/getSubcategorybycategory");
             var count_cat=0;
             for(var i=0;i<response_list.data.length;i++){
                 

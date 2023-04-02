@@ -38,7 +38,7 @@ function Forgotpassword(){
        toast('pls fill all the fields');  
      }else{
        try {
-       const response=await axios.post("http://localhost:3001/Catalog/user/checkUser", {
+       const response=await axios.post("https://item-catalog-webservice.onrender.com/Catalog/user/checkUser", {
         email:formData.email,
        }); 
        setFormdata(formValues);

@@ -52,7 +52,7 @@ function Productdetail(){
     e.preventDefault();
     if(user_rating!==""){
         try {
-            const response=await axios.post("http://localhost:3001/Catalog/createProductreview", {"review_details":{
+            const response=await axios.post("https://item-catalog-webservice.onrender.com/Catalog/createProductreview", {"review_details":{
                     product_id:productList.id,
                     user_id:user_id,
                     rating:user_rating,
@@ -70,7 +70,7 @@ function Productdetail(){
     } 
   }
     async function getProductreview(rowId){
-        const response = await axios.get(`http://localhost:3001/Catalog/getProductreview/${rowId}`);
+        const response = await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/getProductreview/${rowId}`);
         const response1 = response.data;
         setTotalreview(response1[0].length);
         setReviewdata(response1);  
@@ -79,7 +79,7 @@ function Productdetail(){
    useEffect(() => {
     try{
         async function getProductreview(rowId){
-            const response = await axios.get(`http://localhost:3001/Catalog/getProductreview/${rowId}`);
+            const response = await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/getProductreview/${rowId}`);
             const response1 = response.data;
             setTotalreview(response1[0].length);
             setReviewdata(response1);  
@@ -90,7 +90,7 @@ function Productdetail(){
         }    
     try{
         async function getData(rowId){
-            const response = await axios.get(`http://localhost:3001/Catalog/getProductdetail/${rowId}`);
+            const response = await axios.get(`https://item-catalog-webservice.onrender.com/Catalog/getProductdetail/${rowId}`);
             const response1 = response.data.product_details[0];
             
             setHtml(response1.product_specification);

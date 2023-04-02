@@ -50,7 +50,7 @@ function Category(){
     }else{
       setLoading(true);
       try {
-       const response=await axios.post("http://localhost:3001/Catalog/createCategory",{"category_details":{
+       const response=await axios.post("https://item-catalog-webservice.onrender.com/Catalog/createCategory",{"category_details":{
         category_name:formData.category_name,
       }
       });
@@ -72,7 +72,7 @@ function Category(){
         async function getData(){
           setLoading(true);
             try {  
-            const response=await axios.get("http://localhost:3001/Catalog/listCategory");
+            const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listCategory");
             setUserdata(response.data);  
             }catch(error){
             }
@@ -85,7 +85,7 @@ function Category(){
       const listDatas= async function getData(){
         setLoading(true);
           try {  
-          const response=await axios.get("http://localhost:3001/Catalog/listCategory");
+          const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listCategory");
           setUserdata(response.data); 
          
           }catch(error){
@@ -100,7 +100,7 @@ function Category(){
       async function onDeleteData(id){
         setLoading(true);
         try {
-        const response = await axios.delete(`http://localhost:3001/Catalog/deleteCategory/${id}`);
+        const response = await axios.delete(`https://item-catalog-webservice.onrender.com/Catalog/deleteCategory/${id}`);
         toast(response.data.msg);    
         listDatas();
         }catch(error){

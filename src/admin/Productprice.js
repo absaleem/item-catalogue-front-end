@@ -80,7 +80,7 @@ function Productprice(){
       setLoading(true);
       try {
 
-       const response=await axios.post("http://localhost:3001/Catalog/createProductprice",{"product_details":{
+       const response=await axios.post("https://item-catalog-webservice.onrender.com/Catalog/createProductprice",{"product_details":{
         product_id: formData.product_id,
         product_image: formData.product_image,
         product_price: formData.product_price,
@@ -103,7 +103,7 @@ function Productprice(){
         async function getData(){
           setLoading(true);
             try {  
-            const response=await axios.get("http://localhost:3001/Catalog/listProductprice");
+            const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listProductprice");
             setUserdata(response.data);  
             }catch(error){
             }
@@ -112,7 +112,7 @@ function Productprice(){
         async function getProductlist(){
             setLoading(true);
               try {  
-              const response=await axios.get("http://localhost:3001/Catalog/listProduct");
+              const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listProduct");
               setProductdata(response.data);  
               }catch(error){
               }
@@ -122,7 +122,7 @@ function Productprice(){
       async function getSubcategory(){
           setLoading(true); var arr=[]; var cat_id=''; var arr1=[];
             try {  
-            const response_list=await axios.get("http://localhost:3001/Catalog/getSubcategorybycategory");
+            const response_list=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/getSubcategorybycategory");
             var count_cat=0;
             for(var i=0;i<response_list.data.length;i++){
                 
@@ -150,7 +150,7 @@ function Productprice(){
       const listDatas= async function getData(){
         setLoading(true);
           try {  
-          const response=await axios.get("http://localhost:3001/Catalog/listProductprice");
+          const response=await axios.get("https://item-catalog-webservice.onrender.com/Catalog/listProductprice");
           setUserdata(response.data); 
          
           }catch(error){
@@ -165,7 +165,7 @@ function Productprice(){
       async function onDeleteData(id){
         setLoading(true);
         try {
-        const response = await axios.delete(`http://localhost:3001/Catalog/deleteProduct/${id}`);
+        const response = await axios.delete(`https://item-catalog-webservice.onrender.com/Catalog/deleteProduct/${id}`);
         toast(response.data.msg);    
         listDatas();
         }catch(error){
