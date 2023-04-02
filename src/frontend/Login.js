@@ -33,10 +33,11 @@ function Login(){
      e.preventDefault();
    
      const errorkeys=Object.keys(formData).filter((key)=>{
-       if(formData[key] === "" && key!=='error'){
-         return key;
-       }
-     });
+      if(formData[key] === "" && key!=='error'){
+        return key;
+      }
+        return false;
+    });
  
      if(errorkeys.length>0){
        toast('pls fill all the fields');  

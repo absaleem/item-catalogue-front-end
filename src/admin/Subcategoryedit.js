@@ -44,6 +44,7 @@ function Subcategoryedit(){
       if(formData[key] === "" && key!=='error'){
         return key;
       }
+        return false;
     });
 
     if(errorkeys.length>0){

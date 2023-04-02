@@ -68,10 +68,12 @@ function Productprice(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!=='error')
+      if(formData[key] === "" && key!=='error'){
         return key;
-      
+      }
+        return false;
     });
+
     if(errorkeys.length>0){
       toast('pls fill all the fields');
     }else{
@@ -118,7 +120,7 @@ function Productprice(){
           }
 
       async function getSubcategory(){
-          setLoading(true); var arr=Array(); var cat_id=''; var arr1=Array();
+          setLoading(true); var arr=[]; var cat_id=''; var arr1=[];
             try {  
             const response_list=await axios.get("http://localhost:3001/Catalog/getSubcategorybycategory");
             var count_cat=0;
@@ -263,7 +265,7 @@ function Productprice(){
          userdata.map((row) => (   
        <tr key={row._id}>
        <td>{row.product_name}</td>
-       <td><img src={row.product_image} style={{ width:'100px',height:'100px'}}/></td>
+       <td><img title="img" src={row.product_image} style={{ width:'100px',height:'100px'}}/></td>
        <td> &#8377;{row.product_price}</td>
        <td> &#8377;{row.product_discount_price}</td>
        <td>

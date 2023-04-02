@@ -85,10 +85,11 @@ function Settings(){
        setUserInfo(userinfo.filter((e) => e !== value));
      }
 
-    const errorkeys=Object.keys(formData).filter((key)=>{
+     const errorkeys=Object.keys(formData).filter((key)=>{
       if(formData[key] === "" && key!=='error'){
         return key;
       }
+        return false;
     });
 
     if(errorkeys.length>0){

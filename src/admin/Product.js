@@ -48,7 +48,9 @@ function Product(){
       if(formData[key] === "" && key!=='error'){
         return key;
       }
+        return false;
     });
+    
     if(errorkeys.length>0){
       toast('pls fill all the fields');
     }else{

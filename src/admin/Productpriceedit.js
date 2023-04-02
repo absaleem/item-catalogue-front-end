@@ -66,10 +66,12 @@ function Productpriceedit(){
     e.preventDefault();
   
     const errorkeys=Object.keys(formData).filter((key)=>{
-      if(formData[key] === "" && key!=='error')
+      if(formData[key] === "" && key!=='error'){
         return key;
-      
+      }
+        return false;
     });
+    
     if(errorkeys.length>0){
       toast('pls fill all the fields');
     }else{
@@ -121,7 +123,7 @@ function Productpriceedit(){
           }
 
           async function getSubcategory(){
-             var arr=Array(); var cat_id=''; var arr1=Array();
+             var arr=[]; var cat_id=''; var arr1=[];
               try {  
               const response_list=await axios.get("http://localhost:3001/Catalog/getSubcategorybycategory");
               var count_cat=0;
