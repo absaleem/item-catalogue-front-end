@@ -4,7 +4,7 @@ import { Link,useNavigate } from 'react-router-dom';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete'
 
 function Topbar(){
-   let url="https://item-catalog-webservice.onrender.com/";
+   let url="https://delightful-alfajores-20cc05.netlify.app";
    
    const navigate = useNavigate();
    const user_token = localStorage.getItem("user_token");
